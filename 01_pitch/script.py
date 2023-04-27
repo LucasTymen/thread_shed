@@ -107,21 +107,21 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 
 #------------------------------------------------
 # Start coding below!
-daily_sales_replaced = daily_sales.replace(";,;","#")
+daily_sales_replaced = daily_sales.replace(";,;","+")
 daily_transactions = daily_sales_replaced.split(",")
 #print(daily_transactions)
 
 daily_transactions_split = []
 for transaction in daily_transactions:
-  daily_transactions_split.append(transaction.split("#"))
+  daily_transactions_split.append(transaction.split("+"))
   #print(xxxxxx)
 
 transactions_clean = []
 for transaction in daily_transactions_split:
   transaction_clean = []
   for data_point in transaction:
-    transactions_clean.append(data_point.replace("\n","").strip(" "))
-    transactions_clean.append(transactions_clean)
+    transaction_clean.append(data_point.replace("\n","").strip(" "))
+    transactions_clean.append(transaction_clean) # <<==== indentation bizare
 
 customers = []
 sales = []
@@ -133,6 +133,6 @@ for transaction in transactions_clean:
   thread_sold.append(transaction[2])
 
 #print(transactions_clean)
-print(customers)
-print(sales)
-print(thread_sold)
+#print(customers)
+#print(sales)
+#print(thread_sold)

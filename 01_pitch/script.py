@@ -107,32 +107,32 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 
 #------------------------------------------------
 # Start coding below!
-
 daily_sales_replaced = daily_sales.replace(";,;","#")
 daily_transactions = daily_sales_replaced.split(",")
+#print(daily_transactions)
 
 daily_transactions_split = []
-
-for item in daily_transactions:
-  daily_transactions_split.append(item.split("#"))
+for transaction in daily_transactions:
+  daily_transactions_split.append(transaction.split("#"))
+  #print(xxxxxx)
 
 transactions_clean = []
-
-for item in daily_transactions_split:
+for transaction in daily_transactions_split:
   transaction_clean = []
-  for data_point in item:
+  for data_point in transaction:
     transactions_clean.append(data_point.replace("\n","").strip(" "))
-print(transactions_clean)
+    transactions_clean.append(transactions_clean)
+
 customers = []
 sales = []
 thread_sold = []
-"""
-for item in transactions_clean:
-  customers.append(data_point)
-  sales.append(data_point)
-  thread_sold.append(data_point)
 
+for transaction in transactions_clean:
+  customers.append(transaction[0])
+  sales.append(transaction[1])
+  thread_sold.append(transaction[2])
+
+#print(transactions_clean)
 print(customers)
 print(sales)
 print(thread_sold)
-"""

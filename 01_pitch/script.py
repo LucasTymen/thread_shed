@@ -111,10 +111,16 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 daily_sales_replaced = daily_sales.replace(";,;","#")
 daily_transactions = daily_sales_replaced.split(",")
 
-
 daily_transactions_split = []
 
 for item in daily_transactions:
-  daily_transactions_split.append(item.strip("#"))
+  daily_transactions_split.append(item.split("#"))
 
-print(daily_transactions_split)
+transactions_clean = []
+
+for item in daily_transactions_split:
+  transaction_clean = []
+  for data_point in item:
+    transactions_clean.append(data_point.strip(""))
+
+print(transactions_clean)
